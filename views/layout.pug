@@ -3,5 +3,31 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
   body
-    block content
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+      .container
+        a.navbar-brand(href='/') PC Repair
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarsExampleDefault.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item(class=title=='Home' ? 'active' : undefined)
+              a.nav-link(href='/')
+                | Home 
+                span.sr-only (current)
+            li.nav-item(class=title=='About' ? 'active' : undefined)
+              a.nav-link(href='/about') About 
+            li.nav-item(class=title=='Services' ? 'active' : undefined)
+              a.nav-link(href='/Services') Services 
+            li.nav-item(class=title=='Contact' ? 'active' : undefined)
+              a.nav-link(href='/contact') Contact 
+    .container.mt-2
+      block content
+
+
+
+
+      hr
+      footer
+        p PC Repair &copy: 2019
